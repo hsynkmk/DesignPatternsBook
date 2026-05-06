@@ -1,63 +1,82 @@
-# Design Patterns
+# Design Patterns in C#
 
-A collection of design patterns implemented in C# with clean examples and detailed explanations.
+The 23 GoF (Gang of Four) design patterns implemented in C#, with Mermaid class diagrams, when-to-use notes, and side-by-side anti-pattern comparisons.
+
+> 🎯 **Crunched for time before an interview?** Start with the [Interview Cheat Sheet](INTERVIEW_CHEATSHEET.md) — every pattern boiled down to one line.
+
+---
 
 ## 📚 Patterns Catalog
 
-### Creational Patterns
-1. **[Singleton Pattern](Singleton.md)**: Ensures a class has only one instance while providing global access. Ideal for configuration managers and logging systems.
-2. **[Factory Method Pattern](FactoryMethodPattern.md)**: Defers object creation to subclasses while maintaining a common interface. Enables flexible object generation.
-3. **[Abstract Factory Pattern](AbstractFactoryPattern.md)**: Creates families of related objects without specifying concrete classes. Perfect for cross-platform UI toolkits.
-4. **[Builder Pattern](Builder.md)**: Constructs complex objects step-by-step. Useful for creating objects with many optional components.
-5. **[Prototype Pattern](Prototype.md)**: Creates new objects by cloning prototypes. Efficient for expensive object initialization.
+### 🟢 Creational — *how objects are made*
+| # | Pattern | One-liner |
+|---|---------|-----------|
+| 1 | [Singleton](Singleton.md) | One instance, global access (configs, loggers) |
+| 2 | [Factory Method](FactoryMethodPattern.md) | Subclass decides which class to instantiate |
+| 3 | [Abstract Factory](AbstractFactoryPattern.md) | Create **families** of related objects |
+| 4 | [Builder](Builder.md) | Step-by-step construction of complex objects |
+| 5 | [Prototype](Prototype.md) | Clone existing objects instead of building anew |
 
-### Structural Patterns
-6. **[Adapter Pattern](Adapter.md)**: Bridges incompatible interfaces. Commonly used in legacy system integration.
-7. **[Decorator Pattern](Decorator.md)**: Adds responsibilities to objects dynamically. Alternative to subclassing for extending functionality.
-8. **[Facade Pattern](Facade.md)**: Provides simplified interface to complex subsystems. Reduces subsystem dependencies.
-9. **[Composite Pattern](Composite.md)**: Treats individual objects and compositions uniformly. Ideal for tree-structured hierarchies.
-10. **[Proxy Pattern](Proxy.md)**: Controls access to another object. Used in lazy loading and access control.
-11. **[Flyweight Pattern](Flyweight.md)**: Minimizes memory usage through object sharing. Effective for large quantities of similar objects.
-12. **[Bridge Pattern](Bridge.md)**: Decouples abstraction from implementation. Enables independent variation of both.
+### 🟡 Structural — *how objects are composed*
+| # | Pattern | One-liner |
+|---|---------|-----------|
+| 6 | [Adapter](Adapter.md) | Bridge incompatible interfaces |
+| 7 | [Bridge](Bridge.md) | Decouple abstraction from implementation |
+| 8 | [Composite](Composite.md) | Treat individual objects and groups uniformly |
+| 9 | [Decorator](Decorator.md) | Add behavior dynamically without subclassing |
+| 10 | [Facade](Facade.md) | Simple interface over a complex subsystem |
+| 11 | [Flyweight](Flyweight.md) | Share fine-grained objects to save memory |
+| 12 | [Proxy](Proxy.md) | Stand-in that controls access (lazy, caching, remoting) |
 
-### Behavioral Patterns
-13. **[Memento Pattern](Memento.md)**: Captures and restores object state. Essential for undo/redo functionality.
-14. **[State Pattern](State.md)**: Encapsulates state-specific behavior. Manages object behavior changes during runtime.
-15. **[Iterator Pattern](Iterator.md)**: Provides sequential access to collection elements. Abstracts traversal logic.
-16. **[Strategy Pattern](Strategy.md)**: Encapsulates interchangeable algorithms. Enables runtime algorithm selection.
-17. **[Template Method Pattern](TemplateMethod.md)**: Defines algorithm skeleton with customizable steps. Promotes code reuse.
-18. **[Command Pattern](Command.md)**: Encapsulates requests as objects. Enables queuing and undo operations.
-19. **[Observer Pattern](Observer.md)**: Implements publish-subscribe mechanism. Maintains consistency between related objects.
-20. **[Mediator Pattern](Mediator.md)**: Centralizes complex communication between objects. Reduces direct dependencies.
-21. **[Chain of Responsibility](ChainOfResponsibility.md)**: Passes requests through handler chain. Achieves loose coupling in request processing.
-22. **[Visitor Pattern](Visitor.md)**:  Separates algorithms from object structures. Enables adding new operations without changing classes.
-23. **[Composite Pattern](Composite.md)**: (Note: Composite appears in both Structural and Behavioral categories based on usage context)
+### 🔵 Behavioral — *how objects communicate*
+| # | Pattern | One-liner |
+|---|---------|-----------|
+| 13 | [Chain of Responsibility](ChainOfResponsibility.md) | Pass requests along a chain of handlers |
+| 14 | [Command](Command.md) | Encapsulate requests as objects (undo, queues) |
+| 15 | [Iterator](Iterator.md) | Sequential traversal of a collection |
+| 16 | [Mediator](Mediator.md) | Centralize complex object communication |
+| 17 | [Memento](Memento.md) | Capture & restore object state (undo) |
+| 18 | [Observer](Observer.md) | Publish-subscribe between objects |
+| 19 | [State](State.md) | Behavior changes when internal state changes |
+| 20 | [Strategy](Strategy.md) | Swap interchangeable algorithms at runtime |
+| 21 | [Template Method](TemplateMethod.md) | Skeleton in base class, customizable steps |
+| 22 | [Visitor](Visitor.md) | Add operations to a structure without changing it |
 
-## 🛠 Usage
+---
 
-Each pattern includes:
-- Problem statement
-- Pattern solution
-- C# implementation
-- Usage examples
-- Mermaid class diagrams
-- Key benefits and considerations
+## 📐 Each pattern file includes
+- **Problem** — the situation that calls for it
+- **Solution** — the pattern's core idea
+- **Use Cases** — real-world fits
+- **C# Implementation** — clean, idiomatic
+- **Mermaid class diagram** — visual structure
+- **Key benefits & considerations** — trade-offs
+- **Variations / anti-pattern warnings** — when *not* to use it
 
+---
+
+## 🗺️ Suggested Study Order (interview prep)
+
+1. **Strategy** — the gateway pattern; you've probably used it without naming it
+2. **Singleton + Factory Method** — classics; know their pitfalls
+3. **Observer** — events / pub-sub appears everywhere
+4. **Decorator vs Proxy vs Adapter vs Facade** — the structural quartet (very common interview question)
+5. **Command** — undo, CQRS, queues
+6. **State vs Strategy** — interviewer favorite; same UML, different intent
+7. **Builder** — fluent APIs
+8. **Composite** — tree-shaped data with uniform ops
+9. **Template Method vs Strategy** — inheritance vs composition trade-off
+10. The rest — recognize them when you see them
+
+---
+
+## 🛠 Setup
 ```bash
-# Clone repository
 git clone https://github.com/hsynkmk/Design-Patterns.git
+cd Design-Patterns
 ```
 
-📖 Prerequisites
-- Basic understanding of object-oriented programming
-- Familiarity with C# syntax
-- Visual Studio or VS Code (recommended)
+**Prerequisites:** Basic C# / OOP, Visual Studio or VS Code.
 
-🤝 Contributing
-Contributions welcome! Please:
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a pull request
+## 🤝 Contributing
+PRs welcome! Fork → branch → commit → push → open PR.
