@@ -4,6 +4,13 @@
 
 > 💡 The interviewer rarely asks "implement Visitor on the whiteboard." They ask: **"Have you used patterns? Which? Why?"** — so what matters is **recognition** and **trade-offs**.
 
+**Want the full lessons?** Each pattern below links to a quick-reference file. For the in-depth,
+intuition-first course (with refactoring exercises), start at the
+[course home](README.md) → [Foundations](00-Foundations/README.md) ·
+[Creational](01-Creational/README.md) · [Structural](02-Structural/README.md) ·
+[Behavioral](03-Behavioral/README.md) · [Modern & Enterprise](04-Modern-and-Enterprise/README.md) ·
+[Choosing a Pattern](05-Practice-and-Beyond/02.Choosing-a-Pattern.md).
+
 ---
 
 ## 🧭 Quick Triage: "What kind of problem is this?"

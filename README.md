@@ -1,82 +1,62 @@
-# Design Patterns in C#
+# Design Patterns — A Complete Course (C#)
 
-The 23 GoF (Gang of Four) design patterns implemented in C#, with Mermaid class diagrams, when-to-use notes, and side-by-side anti-pattern comparisons.
+> **Read this repo top to bottom and you'll go from OOP basics to senior-level pattern fluency.**
+> Every pattern starts with a plain-English analogy, shows the *painful code without it*, then the
+> clean C# fix, and ends with **refactoring exercises solved in full**. No pattern knowledge assumed.
 
-> 🎯 **Crunched for time before an interview?** Start with the [Interview Cheat Sheet](INTERVIEW_CHEATSHEET.md) — every pattern boiled down to one line.
+This isn't an alphabetical reference — it's an **ordered curriculum**. The folders are numbered
+`00 → 05`. Read them in order and each topic only relies on what came before.
 
----
-
-## 📚 Patterns Catalog
-
-### 🟢 Creational — *how objects are made*
-| # | Pattern | One-liner |
-|---|---------|-----------|
-| 1 | [Singleton](Singleton.md) | One instance, global access (configs, loggers) |
-| 2 | [Factory Method](FactoryMethodPattern.md) | Subclass decides which class to instantiate |
-| 3 | [Abstract Factory](AbstractFactoryPattern.md) | Create **families** of related objects |
-| 4 | [Builder](Builder.md) | Step-by-step construction of complex objects |
-| 5 | [Prototype](Prototype.md) | Clone existing objects instead of building anew |
-
-### 🟡 Structural — *how objects are composed*
-| # | Pattern | One-liner |
-|---|---------|-----------|
-| 6 | [Adapter](Adapter.md) | Bridge incompatible interfaces |
-| 7 | [Bridge](Bridge.md) | Decouple abstraction from implementation |
-| 8 | [Composite](Composite.md) | Treat individual objects and groups uniformly |
-| 9 | [Decorator](Decorator.md) | Add behavior dynamically without subclassing |
-| 10 | [Facade](Facade.md) | Simple interface over a complex subsystem |
-| 11 | [Flyweight](Flyweight.md) | Share fine-grained objects to save memory |
-| 12 | [Proxy](Proxy.md) | Stand-in that controls access (lazy, caching, remoting) |
-
-### 🔵 Behavioral — *how objects communicate*
-| # | Pattern | One-liner |
-|---|---------|-----------|
-| 13 | [Chain of Responsibility](ChainOfResponsibility.md) | Pass requests along a chain of handlers |
-| 14 | [Command](Command.md) | Encapsulate requests as objects (undo, queues) |
-| 15 | [Iterator](Iterator.md) | Sequential traversal of a collection |
-| 16 | [Mediator](Mediator.md) | Centralize complex object communication |
-| 17 | [Memento](Memento.md) | Capture & restore object state (undo) |
-| 18 | [Observer](Observer.md) | Publish-subscribe between objects |
-| 19 | [State](State.md) | Behavior changes when internal state changes |
-| 20 | [Strategy](Strategy.md) | Swap interchangeable algorithms at runtime |
-| 21 | [Template Method](TemplateMethod.md) | Skeleton in base class, customizable steps |
-| 22 | [Visitor](Visitor.md) | Add operations to a structure without changing it |
+🎯 **In a hurry before an interview?** Jump to the [Interview Cheat Sheet](INTERVIEW_CHEATSHEET.md).
+🧭 **New to patterns?** Start with [What Are Design Patterns](00-Foundations/01.What-Are-Design-Patterns.md).
+🤔 **Stuck choosing one?** See [Choosing a Pattern](05-Practice-and-Beyond/02.Choosing-a-Pattern.md).
 
 ---
 
-## 📐 Each pattern file includes
-- **Problem** — the situation that calls for it
-- **Solution** — the pattern's core idea
-- **Use Cases** — real-world fits
-- **C# Implementation** — clean, idiomatic
-- **Mermaid class diagram** — visual structure
-- **Key benefits & considerations** — trade-offs
-- **Variations / anti-pattern warnings** — when *not* to use it
+## 🗺️ The Curriculum
+
+| # | Module | What you'll learn | Why it's here |
+|---|--------|-------------------|---------------|
+| **00** | [Foundations](00-Foundations/README.md) | OOP recap, **SOLID**, composition over inheritance, reading UML | You can't understand patterns without these |
+| **01** | [Creational](01-Creational/README.md) | Factory Method, Abstract Factory, Builder, Prototype, Singleton | *How objects are made* |
+| **02** | [Structural](02-Structural/README.md) | Adapter, Facade, Decorator, Proxy, Composite, Bridge, Flyweight | *How objects are composed* |
+| **03** | [Behavioral](03-Behavioral/README.md) | Strategy, Observer, Command, State, Iterator, and more | *How objects communicate* |
+| **04** | [Modern & Enterprise](04-Modern-and-Enterprise/README.md) | DI, Repository/Unit of Work, CQRS, Null Object, Specification | Patterns seniors use daily that GoF predates |
+| **05** | [Practice & Beyond](05-Practice-and-Beyond/README.md) | Anti-patterns, choosing a pattern, study plan | Applying it all wisely |
+
+The **23 classic GoF patterns** (Creational + Structural + Behavioral) are all here — including
+**Interpreter**, which completes the set.
 
 ---
 
-## 🗺️ Suggested Study Order (interview prep)
+## 🧭 How to Study This
 
-1. **Strategy** — the gateway pattern; you've probably used it without naming it
-2. **Singleton + Factory Method** — classics; know their pitfalls
-3. **Observer** — events / pub-sub appears everywhere
-4. **Decorator vs Proxy vs Adapter vs Facade** — the structural quartet (very common interview question)
-5. **Command** — undo, CQRS, queues
-6. **State vs Strategy** — interviewer favorite; same UML, different intent
-7. **Builder** — fluent APIs
-8. **Composite** — tree-shaped data with uniform ops
-9. **Template Method vs Strategy** — inheritance vs composition trade-off
-10. The rest — recognize them when you see them
+1. **Don't skip Foundations.** [SOLID](00-Foundations/03.SOLID-Principles.md) and
+   composition-over-inheritance are the "why" behind every pattern.
+2. **Feel the problem first.** Each file shows the painful *before* code — understand the pain
+   before the cure.
+3. **Do the 🎯 Practice.** These are **refactoring exercises**: take messy code and restructure it
+   with the pattern. Attempt before reading the solution.
+4. **Learn the comparisons.** Patterns that share a UML but differ in *intent* (State vs Strategy,
+   Proxy vs Decorator) are interview favorites — see [Choosing a Pattern](05-Practice-and-Beyond/02.Choosing-a-Pattern.md).
+5. **Use the self-check questions** at the end of each file as your "ready to move on?" gate.
+
+A week-by-week roadmap lives in the [Study Plan](05-Practice-and-Beyond/03.Study-Plan.md).
 
 ---
 
-## 🛠 Setup
-```bash
-git clone https://github.com/hsynkmk/Design-Patterns.git
-cd Design-Patterns
-```
+## 📐 How Each Pattern Is Structured
 
-**Prerequisites:** Basic C# / OOP, Visual Studio or VS Code.
+Every file follows the same shape — intuition → the problem (before) → structure (UML) → C# (after)
+→ trade-offs → when to use/avoid → related patterns → real-world examples → **refactoring practice
+with solutions** → takeaways. See [TEMPLATE.md](TEMPLATE.md) for the full spec.
+
+> 💡 The golden rule of this repo: **a pattern is a solution to a recurring problem.** Learn the
+> *problem* and the pattern becomes obvious. Memorizing structure without the problem is useless.
+
+---
 
 ## 🤝 Contributing
-PRs welcome! Fork → branch → commit → push → open PR.
+
+PRs welcome. New content must follow [TEMPLATE.md](TEMPLATE.md) so the learning curve stays
+consistent. Open an issue first for anything large.
